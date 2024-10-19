@@ -2,7 +2,7 @@
 async function deleteSubmission(index) {
     try {
         // Send DELETE request to the server
-        const response = await fetch(`/delete/${index}`, {
+        const response = await fetch(`delete/${index}`, {
             method: 'DELETE'
         });
 

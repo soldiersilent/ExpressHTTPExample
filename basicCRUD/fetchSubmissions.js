@@ -1,7 +1,7 @@
 // Function to fetch and render submissions in the table
 async function loadSubmissions() {
     try {
-        const response = await fetch('/submissions'); // Fetch submissions from the server
+        const response = await fetch('submissions');  // Fetch submissions from the server
         const submissions = await response.json(); // Parse the JSON response
 
         const tableBody = document.getElementById('data-table');
@@ -51,7 +51,7 @@ async function submitForm(event) {
 
     try {
         // Send form data via POST request
-        const response = await fetch('/submit', {
+        const response = await fetch('/basicCRUD/submit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

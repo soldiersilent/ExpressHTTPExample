@@ -2,19 +2,18 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-// Import the different route files
-const basicCRUDRoutes = require('./routes/basicCRUDindex');  // Routes for basic CRUD operations
-const homeRoutes = require('./routes/homeIndex');            // Routes for home page
-const queryRoutes = require('./routes/queryindex');          // Routes for query parameters
-
 // Middleware to parse JSON bodies
 app.use(express.json());
-
-// Handles URL-encoded data
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files from the 'public' directory (CSS, JS, etc.)
-app.use(express.static('public'));
+// Serve static files for basicCRUD and queryParameters
+app.use('/basicCRUD', express.static(path.join(__dirname, 'basicCRUD')));
+app.use('/queryParameters', express.static(path.join(__dirname, 'queryParameters')));
+
+// Import the different route files
+const basicCRUDRoutes = require('./routes/basicCRUDIndex');
+const homeRoutes = require('./routes/homeIndex');
+const queryRoutes = require('./routes/queryIndex');
 
 // Serve the home page routes
 app.use('/', homeRoutes);

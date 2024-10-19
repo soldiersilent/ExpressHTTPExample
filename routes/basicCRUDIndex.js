@@ -7,18 +7,18 @@ const submissions = [];
 
 // Serve the HTML form on the root URL
 router.get('/', (req, res) => {
-    console.log("GET request to '/basicCRUD/' route received.");
+    console.log("GET request to '/basicCRUD' route received.");
     res.sendFile(path.join(__dirname, '../basicCRUD/basicCRUD.html')); // Serve the form page
 });
 
 // API to fetch all submissions (JSON format)
-router.get('/basicCRUD/submissions', (req, res) => {
+router.get('/submissions', (req, res) => {
     console.log("Current submissions:", submissions);
     res.json(submissions); // Return submissions as JSON
 });
 
 // POST route to handle form submission
-router.post('/basicCRUD/submit', (req, res) => {
+router.post('/submit', (req, res) => {
     const { name, email, dob, age, height } = req.body;
 
     // Validate form data
@@ -44,7 +44,7 @@ router.post('/basicCRUD/submit', (req, res) => {
 });
 
 // PUT route to handle editing a submission by index
-router.put('/basicCRUD/edit/:index', (req, res) => {
+router.put('/edit/:index', (req, res) => {
     const index = parseInt(req.params.index);
     const { name, email, dob, age, height } = req.body;
 
@@ -71,7 +71,7 @@ router.put('/basicCRUD/edit/:index', (req, res) => {
 });
 
 // DELETE route to handle removing a submission by index
-router.delete('/basicCRUD/delete/:index', (req, res) => {
+router.delete('/delete/:index', (req, res) => {
     const index = parseInt(req.params.index); // Get the index from the URL
     if (isNaN(index) || index < 0 || index >= submissions.length) {
         return res.status(400).send('Invalid index.');

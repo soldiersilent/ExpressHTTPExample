@@ -2,7 +2,7 @@
 async function editSubmission(index, submissionData) {
     try {
         // Send PUT request to the server
-        const response = await fetch(`/edit/${index}`, {
+        const response = await fetch(`edit/${index}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
