@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express HTTP Demo</title>
+</head>
+<body>
+    <h1>Welcome to the Express HTTP Demo</h1>
+    <p>This project is a learning tool for HTTP basics.</p>
+
+    <!-- Form to collect user data -->
+    <h2>Submit Your Info</h2>
+    <form id="submission-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="height">Height (in meters):</label>
+        <input type="number" step="0.01" id="height" name="height" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Table to display submitted data -->
+    <h2>Submitted Data</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+                <th>Age</th>
+                <th>Height (m)</th>
+                <th>Actions</th> <!-- column for actions like delete/edit -->
+            </tr>
+        </thead>
+        <tbody id="data-table">
+            <!-- Table rows will be dynamically inserted here -->
+        </tbody>
+    </table>
+
+    <!-- Include external JavaScript files -->
+    <script src="/fetchSubmissions.js"></script>
+    <script src="/deleteSubmissions.js"></script>
+    <script src="/editSubmissions.js"></script>
+
+</body>
+</html>
