@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require('path'); // For resolving file paths
+const path = require('path');
 const router = express.Router();
 
 // In-memory storage for submitted data
@@ -7,18 +7,18 @@ const submissions = [];
 
 // Serve the HTML form on the root URL
 router.get('/', (req, res) => {
-    console.log("GET request to '/' route received.");
-    res.sendFile(path.join(__dirname, '../public/index.html')); // Serve the form page
+    console.log("GET request to '/basicCRUD/' route received.");
+    res.sendFile(path.join(__dirname, '../basicCRUD/basicCRUD.html')); // Serve the form page
 });
 
 // API to fetch all submissions (JSON format)
-router.get('/submissions', (req, res) => {
+router.get('/basicCRUD/submissions', (req, res) => {
     console.log("Current submissions:", submissions);
     res.json(submissions); // Return submissions as JSON
 });
 
 // POST route to handle form submission
-router.post('/submit', (req, res) => {
+router.post('/basicCRUD/submit', (req, res) => {
     const { name, email, dob, age, height } = req.body;
 
     // Validate form data
@@ -44,7 +44,7 @@ router.post('/submit', (req, res) => {
 });
 
 // PUT route to handle editing a submission by index
-router.put('/edit/:index', (req, res) => {
+router.put('/basicCRUD/edit/:index', (req, res) => {
     const index = parseInt(req.params.index);
     const { name, email, dob, age, height } = req.body;
 
@@ -71,7 +71,7 @@ router.put('/edit/:index', (req, res) => {
 });
 
 // DELETE route to handle removing a submission by index
-router.delete('/delete/:index', (req, res) => {
+router.delete('/basicCRUD/delete/:index', (req, res) => {
     const index = parseInt(req.params.index); // Get the index from the URL
     if (isNaN(index) || index < 0 || index >= submissions.length) {
         return res.status(400).send('Invalid index.');
