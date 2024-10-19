@@ -3,13 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express HTTP Query Params</title>
-    <link rel="stylesheet" href="/styles.css"> <!-- Optional Link to CSS for styling/Unused for now -->
+    <title>Query Parameters Demo</title>
 </head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <!-- More sections can be added here as we expand -->
+        </ul>
+    </nav>
 
-<nav>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <!-- More sections can be added here as we expand -->
-    </ul>
-</nav>
+    <h1>Query Parameters Demo</h1>
+    <p>Use the form below to filter the data by name, age, or height.</p>
+
+    <!-- Full dataset table (dummy data) -->
+    <h2>Full Data Set</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+                <th>Age</th>
+                <th>Height (m)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alice</td>
+                <td>alice@example.com</td>
+                <td>1990-05-12</td>
+                <td>33</td>
+                <td>1.65</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>bob@example.com</td>
+                <td>1988-11-23</td>
+                <td>35</td>
+                <td>1.75</td>
+            </tr>
+            <tr>
+                <td>Charlie</td>
+                <td>charlie@example.com</td>
+                <td>1995-08-17</td>
+                <td>28</td>
+                <td>1.80</td>
+            </tr>
+            <tr>
+                <td>Diana</td>
+                <td>diana@example.com</td>
+                <td>1992-03-09</td>
+                <td>31</td>
+                <td>1.60</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>eve@example.com</td>
+                <td>1998-07-30</td>
+                <td>26</td>
+                <td>1.70</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Form to input query parameters -->
+    <h2>Submit Your Query</h2>
+    <form id="query-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="e.g. Alice"><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="e.g. 33"><br><br>
+
+        <label for="height">Height (in meters):</label>
+        <input type="number" step="0.01" id="height" name="height" placeholder="e.g. 1.65"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    
+    <p>Notice after submitting how your URL changes</p>
+
+    <!-- Table to display filtered data -->
+    <h2>Filtered Data</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+                <th>Age</th>
+                <th>Height (m)</th>
+            </tr>
+        </thead>
+        <tbody id="data-table">
+            <!-- Filtered data will be rendered here -->
+        </tbody>
+    </table>
+
+    <script src="/queryParameters/filterSubmissions.js"></script>
+</body>
+</html>
