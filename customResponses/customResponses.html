@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Response Codes Demo</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/basicCRUD">CRUD Demo</a></li>
+            <li><a href="/queryParameters">Query Params Demo</a></li>
+            <!-- Add more links as you build out additional sections -->
+        </ul>
+    </nav>
+
+    <h1>Custom Response Codes Demo</h1>
+    <p>Enter data to trigger various response codes from the server.</p>
+
+    <!-- Form to simulate different responses -->
+    <form id="response-form">
+        <label for="status">Choose a response type:</label>
+        <select id="status" name="status" required>
+            <option value="success">Success (201 Created)</option>
+            <option value="validation-error">Validation Error (400 Bad Request)</option>
+            <option value="server-error">Server Error (500 Internal Server Error)</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Server Response:</h2>
+    <pre id="response-output"></pre> <!-- Display response from the server -->
+
+    <!-- Script to handle the form submission -->
+    <script src="handleCustomResponses.js"></script>
+</body>
+</html>
