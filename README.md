@@ -73,26 +73,41 @@ In addition to the CRUD operations, this project includes a demonstration of how
 
 ---
 
+## Custom Response Codes and Messages
+
+The project includes a page that demonstrates how different HTTP response status codes can be used. This teaches students the importance of using appropriate status codes when responding to client requests.
+
+1. **201 Created**:
+    - Simulates a successful creation of a resource. 
+    - Route: **`GET /customResponses/success`**.
+
+2. **400 Bad Request**:
+    - Simulates a validation error where the client's input is incorrect.
+    - Route: **`GET /customResponses/validation-error`**.
+
+3. **500 Internal Server Error**:
+    - Simulates an internal server issue that prevents the server from fulfilling the request.
+    - Route: **`GET /customResponses/server-error`**.
+
+---
+
 ## Plans for Additional Teaching Opportunities
 
 The project will be expanded to cover more advanced HTTP and web development concepts. Here’s what’s planned:
 
-1. **Custom Response Codes and Messages**:
-   - Teach the importance of proper response status codes (`201 Created`, `400 Bad Request`, `500 Internal Server Error`) and how they are used in error handling.
-
-2. **HTTP Headers and Authentication**:
+1. **HTTP Headers and Authentication**:
    - Introduce the concept of securing routes using headers (e.g., API keys) to demonstrate simple authentication methods.
 
-3. **Handling File Uploads**:
+2. **Handling File Uploads**:
    - Show how to handle file uploads (e.g., profile pictures) using a library like `multer` to demonstrate how HTTP handles binary data.
 
-4. **CORS (Cross-Origin Resource Sharing)**:
+3. **CORS (Cross-Origin Resource Sharing)**:
    - Teach students about CORS, how to set up HTTP headers, and why it is important in APIs that are accessed from different domains.
 
-5. **Error Pages (404, 500)**:
+4. **Error Pages (404, 500)**:
    - Demonstrate how to handle common error pages like 404 Not Found or 500 Internal Server Error to provide better user experiences.
 
-6. **Async Await and Promises**:
+5. **Async Await and Promises**:
    - Dive deeper into handling asynchronous HTTP requests using `async/await` and how to handle errors in asynchronous code.
 
 ---
